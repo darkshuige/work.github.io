@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面</title>
+    <style>
+        /* 样式保持不变 */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, lightblue 100%);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        .input-box {
+            position: relative;
+            margin-top: 20px;
+        }
+        .input-field {
+            width: 30%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        #register-btn, #reset-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #667eea;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #register-btn:hover, #reset-btn:hover {
+            background-color:#667fff;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .container {
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>欢迎注册</h1>
+        </header>
+        <div class="input-box">
+            <input type="text" id="username-input" class="input-field" placeholder="输入用户名..."><br>
+            <input type="password" id="password-input" class="input-field" placeholder="输入密码..."><br>
+            <button id="register-btn">注册</button>
+            <button id="reset-btn">重置</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById('register-btn').onclick = function() {
+            var username = document.getElementById('username-input').value;
+            var password = document.getElementById('password-input').value;
+            if (username === '' || password === '') {
+                alert('用户名和密码不能为空！');
+            } else {
+                // 这里替换为您的注册处理页面
+                window.location.href = '#';
+            }
+        };
+
+        document.getElementById('reset-btn').onclick = function() {
+            document.getElementById('username-input').value = '';
+            document.getElementById('password-input').value = '';
+        };
+    </script>
+</body>
+</html>
